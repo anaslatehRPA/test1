@@ -1,21 +1,22 @@
 const slugify = require("slugify");
 
 module.exports = function(eleventyConfig) {
-  // Static passthrough
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("styles.css");
   eleventyConfig.addPassthroughCopy("favicon");
 
-  // Collections
   eleventyConfig.addCollection("products", function(collectionApi) {
     return collectionApi.getFilteredByGlob("products/*.md");
   });
 
-  // Filters
+  // ฟิลเตอร์ slug สำหรับภาษาไทยและอังกฤษ (ไม่มี space/อักขระพิเศษ)
   eleventyConfig.addFilter("slug", str => {
     if (!str) return 'none';
+    // ตัด space ต้น/ท้าย และแทนเว้นวรรคด้วย -
     let s = str.trim().replace(/\s+/g, '-');
+    // ลบอักขระพิเศษ ยกเว้นอักษรไทย อังกฤษ ตัวเลข และขีดกลาง
     s = s.replace(/[^ก-๙a-zA-Z0-9\-]/g, '');
+    // แปลงเป็นตัวพิมพ์เล็ก
     return s.toLowerCase();
   });
 
@@ -41,12 +42,7 @@ module.exports = function(eleventyConfig) {
     return arr.filter(item => item !== falsy);
   });
 
-  // ตั้งค่า output directory เป็น docs (สำหรับ GitHub Pages)
   return {
-    dir: {
-      input: ".",
-      includes: "_includes",
-      output: "docs"
-    }
+    dir: { input: ".", includes: "_includes" }
   };
 };

@@ -1,0 +1,245 @@
+/* --------- Global Styles --------- */
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --------- Navbar --------- */
+
+/* Fixed Navbar (always on top) */
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 2000;
+  background: linear-gradient(90deg,#1e3a8a 60%,#2563eb 100%);
+  /* ซ้ำ background เพื่อกัน navbar โปร่งใสผิดพลาด */
+}
+
+/* ชดเชยความสูง navbar ให้เนื้อหาไม่ถูกบัง */
+body {
+  padding-top: 70px; /* ปรับค่าตามความสูงจริงของ navbar */
+}
+@media (max-width: 991px) {
+  body {
+    padding-top: 110px; /* ถ้า navbar mobile สูงขึ้น */
+  }
+}
+
+/* --------- Banner / Carousel --------- */
+
+/* Banner เต็มจอแบบ Full Bleed */
+.banner-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: hidden;
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: linear-gradient(90deg,#2563eb 60%,#1e40af 100%);
+}
+
+/* Banner Content (จัดกึ่งกลาง) */
+.banner-content {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 991.98px) {
+  .banner-content {
+    max-width: 100%;
+  }
+}
+
+/* Banner Image */
+.banner-img {
+  max-height: 680px;
+  object-fit: cover;
+}
+@media (max-width: 991.98px) {
+  .banner-img { max-height: 300px; }
+}
+@media (max-width: 576px) {
+  .banner-img { max-height: 150px; }
+}
+
+/* Carousel Caption */
+.carousel-caption {
+  background: rgba(0,0,0,0.30);
+  border-radius: 1rem;
+  padding: 2.2em 2.5em;
+  text-shadow: 0 2px 8px #234;
+}
+@media (max-width: 768px) {
+  .banner-carousel .carousel-item img { max-height: 180px; }
+  .banner-carousel .carousel-caption h1 { font-size: 1.2rem; }
+}
+
+/* Carousel Controls Custom */
+.carousel-control-prev, .carousel-control-next {
+  width: 56px;
+  height: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1 !important;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: rgba(172, 170, 170, 0.65);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  background-size: 65% 65%;
+  box-shadow: 0 2px 8px rgba(146, 131, 131, 0.22);
+  border: 2px solid #fff;
+}
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' xmlns='http://www.w3.org/2000/svg'><path d='M11 14L5 8l6-6'/></svg>");
+}
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2' xmlns='http://www.w3.org/2000/svg'><path d='M5 2l6 6-6 6'/></svg>");
+}
+/* Hover Effect for Carousel Controls */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(173, 173, 173, 0.85);
+  border-color: #0d64c7;
+  box-shadow: 0 0 0 4px rgba(255,224,102,0.2);
+}
+
+/* --------- Section Utility --------- */
+
+/* Prevent text from wrapping (ใช้กับ class no-break) */
+.no-break {
+  white-space: nowrap;
+}
+
+/* --------- Floating Contact Button --------- */
+
+.floating-contact {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  z-index: 9999;
+  background: #f7f7f7;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+  padding: 8px;
+  transition: box-shadow 0.16s, transform 0.16s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.floating-contact:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  transform: scale(1.08);
+  background: #7be69e;
+}
+.floating-contact img {
+  width: 44px;
+  height: 44px;
+  display: block;
+}
+@media (max-width: 600px) {
+  .floating-contact {
+    right: 12px;
+    bottom: 12px;
+    padding: 4px;
+  }
+  .floating-contact img {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* --------- จุดเด่น (Feature Section) --------- */
+
+/* รูปหลักพื้นหลังจุดเด่น (full-bleed) */
+.full-bleed-img-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+/* ป้องกันซ้อน section ถัดไป (เพิ่มระยะห่างให้หัวข้อสินค้าแนะนำโผล่) */
+section.position-relative.mb-5 {
+  margin-bottom: 160px !important; /* ปรับเพิ่มเป็น 160px หรือมากกว่านี้ */
+}
+
+/* รูปใน section จุดเด่น */
+.main-feature-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: 0 2px 16px rgba(30,64,175,0.09);
+}
+@media (max-width: 991.98px) {
+  .main-feature-img { max-height: 240px; }
+}
+@media (max-width: 576px) {
+  .main-feature-img { max-height: 140px; }
+}
+
+/* กล่องจุดเด่น */
+.feature-card {
+  min-height: 140px;
+  /* เพิ่มเงาหรือ padding ตามต้องการ */
+}
+.company-history-section {
+  background: #f5f5f6;
+  /* เพิ่ม margin ด้านล่างให้ section นี้ห่างจาก section ถัดไป */
+  margin-bottom: 70px !important;
+}
+.company-history-section h2 {
+  letter-spacing: 1px;
+}
+.company-history-section h3 {
+  letter-spacing: 0.5px;
+}
+.company-history-section ul {
+  margin-top: 2rem;
+}
+.company-history-section ul li {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991.98px) {
+  .company-history-section .col-lg-6 {
+    text-align: center;
+  }
+  .company-history-section h2,
+  .company-history-section h3 {
+    text-align: center;
+  }
+}
+@media (max-width: 767.98px) {
+  .company-history-section {
+    padding: 2.2rem 0;
+  }
+  .company-history-section img {
+    max-width: 80vw;
+    margin-top: 2rem;
+  }
+}
+.company-history-section {
+  margin-bottom: 80px !important;
+}
+
+.navbar {
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  min-height: 40px;
+}
+
+.d-none { display: none; 
+}
+/* --------- END --------- */

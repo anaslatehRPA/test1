@@ -1,0 +1,30 @@
+---
+layout: layout.njk
+---
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <img src="{{ image or 'https://via.placeholder.com/400x220?text=สินค้า' }}" class="img-fluid rounded shadow" alt="{{ title }}">
+    </div>
+    <div class="col-md-6">
+      <h1 class="mb-3">{{ title }}</h1>
+      <p class="lead">{{ description }}</p>
+      {% if category %}
+        <p><span class="badge bg-secondary">หมวดหมู่: {{ category }}</span></p>
+      {% endif %}
+      {% if bestseller %}
+        <span class="badge bg-success mb-2">ขายดี</span>
+      {% endif %}
+      {% if features %}
+        <h5 class="mt-4 mb-2">คุณสมบัติ</h5>
+        <ul>
+          {% for feature in features %}
+            <li>{{ feature }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <a href="/products/" class="btn btn-outline-primary mt-3">← กลับหน้าสินค้าทั้งหมด</a>
+    </div>
+  </div>
+</div>

@@ -12,9 +12,23 @@ git commit -m &quot;First commit&quot;
 git remote add origin https://github.com/anaslatehRPA/test1.git
 git branch -M main
 git push -u origin main</p>
-<p>rm -rf docs     # หรือ _site
-npx eleventy  (buld)
-//อัปเดต/แก้ไขโค้ดในเครื่อง แล้วใช้
+<p>rm -rf docs     # หรือ _site</p>
+<p>set ELEVENTY_ENV=github &amp;&amp; npx eleventy  (buld git)
+npx eleventy  (buld)</p>
+<p>//อัปเดต/แก้ไขโค้ดในเครื่อง แล้วใช้
 git add .
 git commit -m &quot;ข้อความอธิบาย&quot;
 git push</p>
+<p>set ELEVENTY_ENV=github &amp;&amp; npx eleventy
+ถ้าเตรียม deploy GitHub Pages
+set ELEVENTY_ENV=github &amp;&amp; npx eleventy --serve</p>
+<p>ถ้าเน้นเทสสำหรับ Netlify/local
+npx eleventy --serve</p>
+<p>set ELEVENTY_ENV=github &amp;&amp; set GITHUB_REPOSITORY=anaslateh2/anaslatehRPA &amp;&amp; npx eleventy
+npx serve docs</p>
+<ul>
+<li>Local:    http://localhost:3000     │</li>
+<li>Network:  http://10.16.108.2:3000</li>
+</ul>
+<p>https://sotrad.netlify.app/
+https://anaslatehrpa.github.io/test1/</p>

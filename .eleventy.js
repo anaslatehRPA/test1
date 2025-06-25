@@ -42,10 +42,10 @@ module.exports = function(eleventyConfig) {
     return arr.filter(item => item !== falsy);
   });
 
-  // ตั้งค่า pathPrefix อัตโนมัติ (Netlify = "/", GitHub Pages = "/anaslatehRPA/")
+  // กำหนด pathPrefix อัตโนมัติ
   const repoName = process.env.GITHUB_REPOSITORY
     ? process.env.GITHUB_REPOSITORY.split('/')[1]
-    : "anaslatehRPA"; // fallback
+    : "test1"; // fallback เป็น test1
 
   const pathPrefix = process.env.ELEVENTY_ENV === "github"
     ? `/${repoName}/`

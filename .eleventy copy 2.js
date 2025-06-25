@@ -42,17 +42,9 @@ module.exports = function(eleventyConfig) {
     return arr.filter(item => item !== falsy);
   });
 
-  // ตั้งค่า pathPrefix อัตโนมัติ (Netlify = "/", GitHub Pages = "/anaslatehRPA/")
-  const repoName = process.env.GITHUB_REPOSITORY
-    ? process.env.GITHUB_REPOSITORY.split('/')[1]
-    : "anaslatehRPA"; // fallback
-
-  const pathPrefix = process.env.ELEVENTY_ENV === "github"
-    ? `/${repoName}/`
-    : "/";
-
+  // ตั้งค่า output directory เป็น docs (สำหรับ GitHub Pages) และ pathPrefix สำหรับ project page
   return {
-    pathPrefix,
+    pathPrefix: "/test1/", // เปลี่ยน test1 ให้ตรงกับชื่อ repository ของคุณ เปลี่ยนจาก /test1/ เป็น  /
     dir: {
       input: ".",
       includes: "_includes",

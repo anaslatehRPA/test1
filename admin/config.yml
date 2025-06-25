@@ -3,7 +3,7 @@ backend:
   branch: main  # หรือ branch ที่คุณใช้
 
 media_folder: "images/uploads"      # ที่เก็บไฟล์อัพโหลดใน repo
-public_folder: "/images/uploads"    # path สำหรับแสดงผลบนเว็บ
+public_folder: "/test1/images/uploads"    # path สำหรับแสดงผลบนเว็บ
 
 collections:
   - name: "products"

@@ -42,12 +42,9 @@ module.exports = function(eleventyConfig) {
     return arr.filter(item => item !== falsy);
   });
 
-  // ตรวจสอบ ENV ว่า build สำหรับ GitHub Pages หรือไม่
-  // ให้เปลี่ยน "test1" เป็นชื่อ repo ของคุณเอง
-  const pathPrefix = process.env.ELEVENTY_ENV === "github" ? "/test1/" : "/";
-
+  // ตั้งค่า output directory เป็น docs (สำหรับ GitHub Pages) และ pathPrefix สำหรับ project page
   return {
-    pathPrefix: pathPrefix,
+    pathPrefix: "/test1/", // เปลี่ยน test1 ให้ตรงกับชื่อ repository ของคุณ เปลี่ยนจาก /test1/ เป็น  /
     dir: {
       input: ".",
       includes: "_includes",

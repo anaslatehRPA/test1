@@ -11,7 +11,7 @@ http://localhost:8080/
 ดูโครงโปรเจค ด้วย power shell (tree /f)
 
 
-npx eleventy
+npx eleventy (buld)
 
 npx @11ty/eleventy --serve
 
@@ -24,6 +24,8 @@ git remote add origin https://github.com/anaslatehRPA/test1.git
 git branch -M main
 git push -u origin main
 
+
+rm -rf docs     # หรือ _site
 npx eleventy  (buld)
 //อัปเดต/แก้ไขโค้ดในเครื่อง แล้วใช้
 git add .

@@ -44,7 +44,7 @@ module.exports = function(eleventyConfig) {
 
   // ตั้งค่า output directory เป็น docs (สำหรับ GitHub Pages) และ pathPrefix สำหรับ project page
   return {
-    pathPrefix: "/test1/", // เปลี่ยน test1 ให้ตรงกับชื่อ repository ของคุณ
+    pathPrefix: "/", // เปลี่ยน test1 ให้ตรงกับชื่อ repository ของคุณ เปลี่ยนจาก /test1/ > /
     dir: {
       input: ".",
       includes: "_includes",

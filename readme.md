@@ -10,4 +10,22 @@ http://localhost:8080/
 
 ดูโครงโปรเจค ด้วย power shell (tree /f)
 
+
+npx eleventy
+
 npx @11ty/eleventy --serve
+
+
+
+git init(ครั้แรกเท่านั้น)
+git add .
+git commit -m "First commit"
+git remote add origin https://github.com/anaslatehRPA/test1.git
+git branch -M main
+git push -u origin main
+
+npx eleventy  (buld)
+//อัปเดต/แก้ไขโค้ดในเครื่อง แล้วใช้
+git add .
+git commit -m "ข้อความอธิบาย"
+git push

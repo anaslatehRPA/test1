@@ -42,14 +42,21 @@ module.exports = function(eleventyConfig) {
     return arr.filter(item => item !== falsy);
   });
 
-  // Dynamic pathPrefix สำหรับใช้ได้ทั้ง Netlify และ GitHub Pages
+  // Dynamic pathPrefix สำหรับใช้ได้ทั้ง Netlify และ GitHub Pages (แก้ไขให้ trim)
   const repoName = process.env.GITHUB_REPOSITORY
-    ? process.env.GITHUB_REPOSITORY.split('/')[1]
+    ? process.env.GITHUB_REPOSITORY.trim().split('/')[1]
     : "test1"; // fallback ถ้า local
 
-  const pathPrefix = process.env.ELEVENTY_ENV === "github"
+  const pathPrefix = process.env.ELEVENTY_ENV && process.env.ELEVENTY_ENV.trim() === "github"
     ? `/${repoName}/`
     : "/";
+
+  // เพิ่ม log สำหรับ debug
+  console.log('DEBUG Eleventy ENV:', {
+    ELEVENTY_ENV: process.env.ELEVENTY_ENV,
+    GITHUB_REPOSITORY: process.env.GITHUB_REPOSITORY,
+    pathPrefix
+  });
 
   return {
     pathPrefix,

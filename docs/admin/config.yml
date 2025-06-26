@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main  # หรือ branch ที่คุณใช้
 
-media_folder: "images/uploads"      # ที่เก็บไฟล์อัพโหลดใน repo
-public_folder: "/test1/images/uploads"    # path สำหรับแสดงผลบนเว็บ
+media_folder: "images/uploads"
+public_folder: "/test1/images/uploads"
 
 collections:
   - name: "products"
@@ -14,7 +14,12 @@ collections:
     extension: "md"
     fields:
       - { label: "ชื่อสินค้า", name: "title", widget: "string" }
-      - { label: "รายละเอียด", name: "body", widget: "markdown" }
+      - { label: "ขายดี", name: "bestseller", widget: "boolean", default: false }
       - { label: "ภาพสินค้า", name: "image", widget: "image" }
-      - { label: "ราคา", name: "price", widget: "string" }
-      - { label: "แสดงในหน้าแรก", name: "featured", widget: "boolean", required: false }
+      - { label: "รายละเอียด", name: "description", widget: "text" }
+      - { label: "หมวดหมู่", name: "category", widget: "string" }
+      - label: "คุณสมบัติ"
+        name: "features"
+        widget: "list"
+        field: { label: "คุณสมบัติ", name: "feature", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "product.njk" }

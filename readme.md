@@ -50,3 +50,6 @@ npx serve docs
 
 https://sotrad.netlify.app/
 https://anaslatehrpa.github.io/test1/
+
+
+npm run build:gh
